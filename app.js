@@ -25,7 +25,7 @@ const newTask = {
 tasks.push(newTask);
 saveTask();
 
-// showTasks();
+showTasks();
 input.value="";
 };
 
