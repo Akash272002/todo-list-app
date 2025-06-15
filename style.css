@@ -1,0 +1,122 @@
+body{
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+
+.container{
+max-width: 500px;
+margin: auto;
+background: #fff;
+padding: 25px;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+h1{
+    text-align: center;
+    color: #333;
+}
+
+.task-input{
+    display:flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.task-input input{
+    flex: 1;
+    padding : 10px;
+    font-size: 16px;
+}
+
+.task-input button{
+    padding: 10px 20px;
+    background: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.task-input button:hover{
+    background: #218838;
+}
+
+.task-filters{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.task-filters button{
+    flex: 1 ;
+    margin: 0 5px;
+    padding : 10px;
+background: #007bff;
+color: white;
+border: none;
+cursor: pointer;
+
+}
+
+.task-filters button:hover{
+    background: #0056b3;
+}
+
+#taskList{
+    list-style: none;
+    padding:0;
+}
+
+#taskList li{
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#taskList li.completed span{
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+#taskList button{
+    margin-left: 10px;
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#taskList button:hover{
+    background: darked;
+}
+
+.footer{
+    margin-top:2px;
+    text-align: center;
+  
+}
+
+.footer button{
+background: #6c757d;
+color: white;
+padding: 10px;
+border: none;
+cursor: pointer;
+}
+
+.footer button:hover{
+    background: #5a6268;
+}
+
+#taskCounter{
+    margin-top: 10px;
+    font-weight: bold;
+    color:#444;
+}
