@@ -1,3 +1,4 @@
+// create empty  array
 let tasks=[];
 
 window.onload=function(){
@@ -9,7 +10,7 @@ window.onload=function(){
     showTasks();
 };
 
-// step 4.2: Add task function
+//  Add task function
 function addTask(){
 const input = document.getElementById("taskInput");
 const taskValue= input.value.trim();
@@ -35,7 +36,7 @@ function saveTask(){
 }
 
 
-// step 4.3: display tasks on the screen
+// display tasks on the screen
 
 function showTasks(filter = "all"){
 const taskList = document.getElementById("taskList");
@@ -67,17 +68,17 @@ updateCounter();
 }
 
 
-// 4.4: Toggle Task as Complete / Incomplete
+//  Toggle Task as Complete / Incomplete
 
 
 function toggleComplete(index){
-    tasks[index].completed= !tasks[index].completed;  //
+    tasks[index].completed= !tasks[index].completed;  
 
     saveTask();
     showTasks();
 }
 
-// 4.5: Delete a Task
+//Delete a Task
 
 function deleteTask(index){
     const confirmation = confirm("Are you sure you want to delete this task? ");
@@ -90,7 +91,7 @@ function deleteTask(index){
 }
 
 
-// 4.6: Edit a Task
+// Edit a Task
 
 function editTask(index){
     const currentText=tasks[index].text;
@@ -118,7 +119,7 @@ function filterTasks(type){
 // clear completed tasks
 
 function clearCompleted(){
-    const isCompleted = task.some(task => task.task.completed);
+    const isCompleted = tasks.some(tasks => tasks.completed);
 
 
     if(!isCompleted){
@@ -126,11 +127,12 @@ function clearCompleted(){
         return;
     }
 
-    task = task.filter(task => !task.completed);
+    tasks = tasks.filter(task => !tasks.completed);
 saveTask();
 showTasks();
 }
 
+// task counter
 function updateCounter(){
     const total= tasks.length;
     const completed= tasks.filter(task=> task.completed).length;
