@@ -7,7 +7,7 @@ body{
 
 
 .container{
-max-width: 500px;
+max-width: 700px;
 margin: auto;
 background: #fff;
 padding: 25px;
@@ -22,8 +22,11 @@ h1{
 }
 
 .task-input{
+   
     display:flex;
     gap: 10px;
+    flex-wrap: wrap;
+     padding: 0 10px;
     margin-bottom: 20px;
 }
 .task-input input{
@@ -81,6 +84,21 @@ cursor: pointer;
     align-items: center;
 }
 
+.task-text{
+    flex:1;
+    margin-left:10px;
+    word-break: break-word;
+}
+
+.task-action{
+    display:flex;
+    gap:5px;
+}
+
+.task-text small{
+    color: #888;
+    font-size: 12px;
+}
 #taskList li.completed span{
     text-decoration: line-through;
     opacity: 0.6;
@@ -121,4 +139,25 @@ cursor: pointer;
     margin-top: 10px;
     font-weight: bold;
     color:#444;
+}
+
+
+@media(max-width: 600px){
+    .task-input{
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .task-input input,
+    .task-input select,
+    .task-input button{
+        width: 100%;
+
+    }
+    .task-filters{
+       display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+ 
 }

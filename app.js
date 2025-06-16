@@ -13,21 +13,27 @@ window.onload=function(){
 //  Add task function
 function addTask(){
 const input = document.getElementById("taskInput");
+const dateInput= document.getElementById("taskDate");
+const priority= document.getElementById("taskPriority");
 const taskValue= input.value.trim();
-
+const dueDate= dateInput.value;
+const priorityValue=priority.value.trim();
 if(taskValue ===""){
     alert("please enter a task.");
     return;
 }
 const newTask = {
     text: taskValue,
-    completed:false
+    completed:false,
+    date: dueDate || "No due date",
+    priority: priorityValue
 };
 tasks.push(newTask);
 saveTask();
 
 showTasks();
 input.value="";
+dateInput.value="";
 };
 
 
@@ -42,24 +48,48 @@ function showTasks(filter = "all"){
 const taskList = document.getElementById("taskList");
 taskList.innerHTML="";
 let filteredTasks=[];
-if(filter === "all"){
-    filteredTasks = tasks;
-}
-else if (filter === "active"){
-filteredTasks=tasks.filter(task => !task.completed);
-}
-else if(filter === "completed"){
-    filteredTasks=tasks.filter(task => task.completed);
-}
+// if(filter === "all"){
+//     filteredTasks = tasks;
+// }
+// else if (filter === "active"){
+// filteredTasks=tasks.filter(task => !task.completed);
+// }
+// else if(filter === "completed"){
+//     filteredTasks=tasks.filter(task => task.completed);
+// }
+switch(filter){
+    case "all":
+    filteredTasks=tasks;
+    break;
+    case "active":
+        filteredTasks=tasks.filter(task => !task.completed);
+        break;
+    case "completed":
+        filteredTasks=tasks.filter(task=> task.completed);
+        break;
+    case "Low":
+        filteredTasks=tasks.filter(task=>task.priority === "Low");
+        break;
+    case "Medium":
+        filteredTasks=tasks.filter(task=>task.priority === "Medium");
+        break;
+    case "High":
+        filteredTasks=tasks.filter(task=>task.priority === "High");
+        break;
+};
 
 filteredTasks.forEach((task,index ) => {
     const li = document .createElement("li");
     if(task.completed)li.classList.add("completed");
 
     li.innerHTML=` <input type="checkbox" onchange="toggleComplete(${index})"  ${task.completed ? "checked" : ""}>
+    <div class="task-text">
     <span> ${task.text}</span>
+     <small>📅 Due: ${task.date} | 🚦Priority: ${task.priority}</small>
+    </div>
+    <div class="task-action">
     <button onclick="editTask(${index})"> Edit</button>
-    <button onclick="deleteTask(${index})">Delete</button>`;
+    <button onclick="deleteTask(${index})">Delete</button></div>`;
 
     taskList.appendChild(li);
 });
@@ -137,7 +167,10 @@ function updateCounter(){
     const total= tasks.length;
     const completed= tasks.filter(task=> task.completed).length;
     const active = total - completed;
+    const low= tasks.filter(task=>task.priority === "Low").length;
+    const medium = tasks.filter(task=> task.priority === "Medium").length;
+    const high= tasks.filter(task => task.priority === "High").length;
 
     const counter = document.getElementById('taskCounter');
-    counter.textContent=` Task Summary: Total = ${total} | Active = ${active} | Completed = ${completed}`; 
+    counter.textContent=` Task Summary: Total = ${total} | Active = ${active} | Completed = ${completed} | Low = ${low} | Medium =${medium} | High = ${high}`; 
 };
