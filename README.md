@@ -1,39 +1,39 @@
 # To-Do List Web App
 
-This is a simple to-do list web application made using HTML, CSS, and JavaScript.
+This is a responsive to-do list web app built using HTML, CSS, and JavaScript.
 
-Users can add tasks, edit them, delete them, and mark them as complete or incomplete. The app also supports filtering tasks by all, active, and completed. Tasks are saved in the browser using localStorage, so they are not lost after refreshing the page.
-
-A due date can also be added while creating a task.
+It allows users to add tasks with a due date and priority, mark them complete or incomplete, and filter tasks by status. The app is fully responsive and works well on mobile, tablet, and desktop devices. Tasks are saved in the browser using localStorage, so they remain even after refreshing the page.
 
 ## Features
 
-- Add new task
-- Edit existing task
-- Delete task
-- Mark task as complete or incomplete
-- Filter tasks by All, Active, Completed
-- Due date support for each task
-- Clear all completed tasks
-- Tasks saved in localStorage
-- Works on mobile, tablet, and desktop
+- Add tasks with optional due date
+- Select task priority (Low, Medium, High)
+- Edit and delete tasks
+- Mark tasks as complete or incomplete
+- Filter tasks: All, Active, Completed
+- Clear all completed tasks with one click
+- Tasks are saved in localStorage (persist after reload)
+- Fully responsive layout (optimized for mobile too)
 
 ## Technologies Used
 
 - HTML
-- CSS
-- JavaScript
+- CSS (Custom, no frameworks)
+- JavaScript (ES6+)
+- Git & GitHub
+- GitHub Pages (for live deployment)
 
 ## How to Use
 
-1. Clone or download the project.
-2. Open the `index.html` file in any browser.
-3. Add your tasks and manage them easily.
+1. Clone the repository or download the zip
+2. Open the `index.html` file in any browser (Chrome recommended)
+3. Start adding your tasks and managing them
 
-## Live Demo
+## Live Website
 
-[https://akash272002.github.io/todo-list-app/](https://akash272002.github.io/todo-list-app/)
+🔗 [https://akash272002.github.io/todo-list-app/](https://akash272002.github.io/todo-list-app/)
 
 ## Author
 
-Akash Shingare
+Created by Akash Shingare
+ 
